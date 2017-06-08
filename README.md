@@ -8,11 +8,20 @@ allow for students without software experience to easily pick up and understand 
 accomplishment when they can get the robot to move within minutes. 
 
 Examples of function calls:
-  driveRobot.backwards(speed, time); //Robot moves backwards at the given speed(double from -1 to 1) for time (int) seconds
-  driveRobot.forward(speed, time);   //Robot moves forwards at the given speed(double from -1 to 1) for time (int) seconds
-  driveRobot.turnLeft(speed, time);  //Robot turns to the left at the given speed(double from -1 to 1) for time (int) seconds
-  driveRobot.turnRight(speed, time); //Robot turns to the right at the given speed(double from -1 to 1) for time (int) seconds
-  driveRobot.stop(time);             //Robot stops for time (int) seconds
+  //Robot moves backwards at the given speed(double from -1 to 1) for time (int) seconds
+    driveRobot.backwards(speed, time);
+  
+  //Robot moves forwards at the given speed(double from -1 to 1) for time (int) seconds
+    driveRobot.forward(speed, time); 
+  
+  //Robot turns to the left at the given speed(double from -1 to 1) for time (int) seconds
+    driveRobot.turnLeft(speed, time);
+  
+  //Robot turns to the right at the given speed(double from -1 to 1) for time (int) seconds
+    driveRobot.turnRight(speed, time);
+  
+  //Robot stops for time (int) seconds
+    driveRobot.stop(time);            
   
   These commands are currently entered into the execute method in runAutonomous.
   
