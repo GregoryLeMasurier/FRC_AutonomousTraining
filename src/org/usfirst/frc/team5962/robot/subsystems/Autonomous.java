@@ -3,7 +3,6 @@ package org.usfirst.frc.team5962.robot.subsystems;
 import org.usfirst.frc.team5962.robot.Robot;
 import org.usfirst.frc.team5962.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Autonomous extends Subsystem  {
 
@@ -20,29 +19,31 @@ public class Autonomous extends Subsystem  {
 
 	
 	//Need to test the turning angles might need to switch which is negative
-	public void forward(double power, int time){
+	public void forward(double speed, int time){
 		double angle = getGyroAngle();
-		driveBase(power, time, -angle * 0.03);
+		driveBase(speed, time, -angle * 0.03, System.currentTimeMillis());
 	}
-	public void turnLeft(double power, int time){
-		driveBase(power, time, 1);
+	public void turnLeft(double speed, int time){
+		driveBase(speed, time, 1, System.currentTimeMillis());
 	}
-	public void turnRight(double power, int time){
-		driveBase(power, time, -1);
+	public void turnRight(double speed, int time){
+		driveBase(speed, time, -1, System.currentTimeMillis());
 	}
-	public void backwards(double power, int time){
+	public void backwards(double speed, int time){
 		double angle = getGyroAngle();
-		driveBase(-power, time, angle * 0.03);
+		driveBase(-speed, time, angle * 0.03, System.currentTimeMillis());
 	}
 	public void stop(int time){
-		driveBase(0, time, 0);
+		driveBase(0, time, 0, System.currentTimeMillis());
 	}
 
-	public void driveBase(double power, int time, double turningValue){
-		long startSystemTime = System.currentTimeMillis(); //move outside function
+	public void driveBase(double power, int time, double turningValue, long startSystemTime){
 		long currentTime = System.currentTimeMillis();
 		if(currentTime < (startSystemTime + (time/1000))){
 			RobotMap.myRobot.drive(-power, turningValue);
+		}
+		else{
+			RobotMap.myRobot.drive(0, 0);
 		}
 	}
 }

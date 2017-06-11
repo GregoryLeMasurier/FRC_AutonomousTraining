@@ -5,16 +5,12 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.networktables.NetworkTable;
-
+import org.usfirst.frc.team5962.robot.commands.AutoExecute;
 import org.usfirst.frc.team5962.robot.commands.RunAutonomous;
 import org.usfirst.frc.team5962.robot.commands.RunJoystickTank;
-import org.usfirst.frc.team5962.robot.sensors.RobotEncoder;
 import org.usfirst.frc.team5962.robot.sensors.RobotGyro;
-import org.usfirst.frc.team5962.robot.sensors.RobotUltrasonicAnalog;
 import org.usfirst.frc.team5962.robot.subsystems.Drive;
 import org.usfirst.frc.team5962.robot.subsystems.Autonomous;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /* The VM is configured to automatically run this class, and to call the
@@ -38,6 +34,8 @@ public class Robot extends IterativeRobot {
 	public static Drive drive;
 	public static RobotGyro gyro= new RobotGyro();
 	public static Autonomous autonomousSubsystem;
+	public static AutoExecute execute;
+	
 	Command autonomousCommand;
 
 
@@ -53,6 +51,7 @@ public class Robot extends IterativeRobot {
 		drive = new Drive();
 		oi = new OI();
 		gyro.resetGyro();
+		
 		
 	}
 
@@ -87,6 +86,8 @@ public class Robot extends IterativeRobot {
 		autonomousSubsystem = new Autonomous();
 
 		autonomousCommand = new RunAutonomous();
+		
+		execute = new AutoExecute();
 
 		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
