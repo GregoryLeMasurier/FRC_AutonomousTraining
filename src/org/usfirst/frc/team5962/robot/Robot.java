@@ -10,7 +10,6 @@ import org.usfirst.frc.team5962.robot.commands.RunJoystickTank;
 import org.usfirst.frc.team5962.robot.sensors.RobotGyro;
 import org.usfirst.frc.team5962.robot.subsystems.Drive;
 import org.usfirst.frc.team5962.robot.subsystems.Autonomous;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /* The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -22,13 +21,10 @@ public class Robot extends IterativeRobot {
 	
 	public static boolean mode = true; //true = auto, false = teleop
 	
-
-	public Robot(){
-		
+	public Robot(){	
 	}
 
 	public static OI oi;
-
 	
 	public static Drive drive;
 	public static RobotGyro gyro= new RobotGyro();
@@ -36,23 +32,18 @@ public class Robot extends IterativeRobot {
 	
 	Command autonomousCommand;
 
-
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
 	
-
 	public void robotInit() {
 		RobotMap.init();
 		
 		drive = new Drive();
 		oi = new OI();
-		gyro.resetGyro();
-		
-		
+		gyro.resetGyro();	
 	}
-
 
 	/**
 	 * This function is called once each time the robot enters Disabled mode.
@@ -77,18 +68,12 @@ public class Robot extends IterativeRobot {
 	 */
 	public void autonomousInit() {
 		mode = true;
-		
-				
-		SmartDashboard.putString("Starting Gyro Angle", gyro.getGyroAngle()+"");
 
 		autonomousSubsystem = new Autonomous();
 
 		autonomousCommand = new RunAutonomous();
 		
-		
-
-		if (autonomousCommand != null)
-		{
+		if (autonomousCommand != null){
 			autonomousCommand.start();
 		}
 	}
@@ -98,12 +83,10 @@ public class Robot extends IterativeRobot {
 	 */
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
-		
 	}
 
 	public void teleopInit() {
 		Command command = new RunJoystickTank(); 
-		
 		command.start();
 	}
 	
@@ -120,6 +103,4 @@ public class Robot extends IterativeRobot {
 	public void testPeriodic() {
 		LiveWindow.run();			
 	}
-
-
 }
