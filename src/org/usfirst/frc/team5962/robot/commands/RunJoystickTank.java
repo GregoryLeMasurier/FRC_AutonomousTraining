@@ -8,35 +8,26 @@ import edu.wpi.first.wpilibj.command.Command;
 public class RunJoystickTank extends Command {
 
 	public void RunGameTank() {
-        requires(Robot.drive);
-    }
+		requires(Robot.drive);
+	}
 
-    protected void initialize() {
+	protected void initialize() {
 
-    }
+	}
 
-    protected void execute() {
-    	Robot.drive.joystickTank();
-    	JoystickThrottle.Speed();
-    }
+	protected void execute() {
+		Robot.drive.joystickTank();
+		JoystickThrottle.Speed();
+	}
 
-    protected boolean isFinished() {
-        return  Robot.oi.joystickTankMode.get();
-    }
+	protected boolean isFinished() {
+		return Robot.oi.joystickTankMode.get();
+	}
 
-    protected void end() {
-    }
+	protected void end() {
+	}
 
-    protected void interrupted() {
-    	end();
-    }
+	protected void interrupted() {
+		end();
+	}
 }
-
-	
-	
-	
-	
-	
-	
-
-

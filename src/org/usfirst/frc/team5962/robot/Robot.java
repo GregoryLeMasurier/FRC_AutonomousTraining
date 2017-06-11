@@ -18,31 +18,31 @@ import org.usfirst.frc.team5962.robot.subsystems.Autonomous;
  * directory.
  */
 public class Robot extends IterativeRobot {
-	
-	public static boolean mode = true; //true = auto, false = teleop
-	
-	public Robot(){	
+
+	public static boolean mode = true; // true = auto, false = teleop
+
+	public Robot() {
 	}
 
 	public static OI oi;
-	
+
 	public static Drive drive;
-	public static RobotGyro gyro= new RobotGyro();
+	public static RobotGyro gyro = new RobotGyro();
 	public static Autonomous autonomousSubsystem;
-	
+
 	Command autonomousCommand;
 
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
-	
+
 	public void robotInit() {
 		RobotMap.init();
-		
+
 		drive = new Drive();
 		oi = new OI();
-		gyro.resetGyro();	
+		gyro.resetGyro();
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class Robot extends IterativeRobot {
 	 * You can use it to reset any subsystem information you want to clear when
 	 * the robot is disabled.
 	 */
-	public void disabledInit(){
+	public void disabledInit() {
 	}
 
 	public void disabledPeriodic() {
@@ -58,13 +58,15 @@ public class Robot extends IterativeRobot {
 	}
 
 	/**
-	 * This autonomous (along with the chooser code above) shows how to select between different autonomous modes
-	 * using the dashboard. The sendable chooser code works with the Java SmartDashboard. If you prefer the LabVIEW
-	 * Dashboard, remove all of the chooser code and uncomment the getString code to get the auto name from the text box
-	 * below the Gyro
+	 * This autonomous (along with the chooser code above) shows how to select
+	 * between different autonomous modes using the dashboard. The sendable
+	 * chooser code works with the Java SmartDashboard. If you prefer the
+	 * LabVIEW Dashboard, remove all of the chooser code and uncomment the
+	 * getString code to get the auto name from the text box below the Gyro
 	 *
-	 * You can add additional auto modes by adding additional commands to the chooser code above (like the commented example)
-	 * or additional comparisons to the switch structure below with additional strings & commands.
+	 * You can add additional auto modes by adding additional commands to the
+	 * chooser code above (like the commented example) or additional comparisons
+	 * to the switch structure below with additional strings & commands.
 	 */
 	public void autonomousInit() {
 		mode = true;
@@ -72,8 +74,8 @@ public class Robot extends IterativeRobot {
 		autonomousSubsystem = new Autonomous();
 
 		autonomousCommand = new RunAutonomous();
-		
-		if (autonomousCommand != null){
+
+		if (autonomousCommand != null) {
 			autonomousCommand.start();
 		}
 	}
@@ -86,10 +88,10 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void teleopInit() {
-		Command command = new RunJoystickTank(); 
+		Command command = new RunJoystickTank();
 		command.start();
 	}
-	
+
 	/**
 	 * This function is called periodically during operator control
 	 */
@@ -101,6 +103,6 @@ public class Robot extends IterativeRobot {
 	 * This function is called periodically during test mode
 	 */
 	public void testPeriodic() {
-		LiveWindow.run();			
+		LiveWindow.run();
 	}
 }

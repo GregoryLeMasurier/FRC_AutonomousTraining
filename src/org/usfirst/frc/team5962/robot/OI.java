@@ -8,18 +8,13 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	
-	
 	public JoystickButton joystickTankMode;
 
 	public Joystick joystickLeft;
 	public Joystick joystickRight;
 
-
 	public OI() {
 		joystickLeft = new Joystick(1);
 		joystickRight = new Joystick(2);
 	}
-	
 }
-

@@ -8,12 +8,12 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class RunAutonomous extends Command {
 
-	private boolean isFinished = false;	
+	private boolean isFinished = false;
 	private AutoExecute execute;
 	private static ArrayList<Item> commands = new ArrayList<Item>();
 	private int index;
 
-	protected void initialize(){
+	protected void initialize() {
 		index = 0;
 		execute = new AutoExecute();
 		Robot.gyro.resetGyro();
@@ -22,26 +22,24 @@ public class RunAutonomous extends Command {
 	}
 
 	protected void execute() {
-		if(index < commands.size()){
+		if (index < commands.size()) {
 			Item item = commands.get(index);
-			if(item.isComplete()){
+			if (item.isComplete()) {
 				index++;
-			}
-			else{
+			} else {
 				item.execute();
 			}
 		}
 		isFinished = true;
 	}
-	
-	public static void addCommand(Item item){
+
+	public static void addCommand(Item item) {
 		commands.add(item);
 	}
-	
+
 	@Override
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
 		return isFinished;
 	}
-
 }

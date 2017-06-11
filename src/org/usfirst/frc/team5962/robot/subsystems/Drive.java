@@ -6,11 +6,8 @@ import org.usfirst.frc.team5962.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class Drive extends Subsystem {
-	
+
 	public void joystickTank() {
 		RobotMap.myRobot.tankDrive(Robot.oi.joystickLeft, Robot.oi.joystickRight);
 	}
@@ -18,6 +15,5 @@ public class Drive extends Subsystem {
 	@Override
 	protected void initDefaultCommand() {
 		// TODO Auto-generated method stub
-
 	}
 }
