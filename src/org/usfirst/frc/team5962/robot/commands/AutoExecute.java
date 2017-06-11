@@ -14,8 +14,6 @@ public class AutoExecute {
 	driveRobot.turnRight(0.5, 3);
 	driveRobot.stop(1000);
 		
-		
-		
 	}
 
 }
