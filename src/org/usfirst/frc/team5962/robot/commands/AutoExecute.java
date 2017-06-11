@@ -6,7 +6,8 @@ public class AutoExecute {
 	
 	public static Autonomous driveRobot = new Autonomous();
 	
-	public void execute(){
+	
+	public void init(){
 		
 	driveRobot.backwards(1, 100);
 	driveRobot.forward(1, 10);
@@ -15,5 +16,6 @@ public class AutoExecute {
 	driveRobot.stop(1000);
 		
 	}
+
 
 }

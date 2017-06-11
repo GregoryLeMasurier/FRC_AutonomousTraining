@@ -1,12 +1,10 @@
 package org.usfirst.frc.team5962.robot.sensors;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class RobotGyro {
-	// gyro
-	//public ADIS16448_IMU gyro;
-	 public ADXRS450_Gyro gyro;
+	
+	public ADXRS450_Gyro gyro;
 	final int gyroChannel = 0;
 	double angleSetPoint = 0.0;
 	final double gyroSpeedConstant = 0.006;
@@ -61,17 +59,10 @@ public class RobotGyro {
 	 */
 
 	public double getGyroAngle() {
-		SmartDashboard.putString("Gyro Angle", "" + gyro.getAngle());
-	//	return gyro.getAngleX();
 		return gyro.getAngle();
-
 	}
 
 	public double getTurningValue() {
 		return (angleSetPoint - gyro.getAngle()) * gyroSpeedConstant;
-	}
-
-	public void showGyroData() {
-	//	SmartDashboard.putString("Gyro Angle", "" + gyro.getAngleX());
 	}
 }

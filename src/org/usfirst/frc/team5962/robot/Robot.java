@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc.team5962.robot.commands.AutoExecute;
 import org.usfirst.frc.team5962.robot.commands.RunAutonomous;
 import org.usfirst.frc.team5962.robot.commands.RunJoystickTank;
 import org.usfirst.frc.team5962.robot.sensors.RobotGyro;
@@ -34,7 +33,6 @@ public class Robot extends IterativeRobot {
 	public static Drive drive;
 	public static RobotGyro gyro= new RobotGyro();
 	public static Autonomous autonomousSubsystem;
-	public static AutoExecute execute;
 	
 	Command autonomousCommand;
 
@@ -87,9 +85,8 @@ public class Robot extends IterativeRobot {
 
 		autonomousCommand = new RunAutonomous();
 		
-		execute = new AutoExecute();
+		
 
-		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
 		{
 			autonomousCommand.start();
