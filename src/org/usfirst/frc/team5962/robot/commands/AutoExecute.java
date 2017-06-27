@@ -30,10 +30,14 @@ public class AutoExecute {
 		 */
 
 		// TODO: Remove the test commands below.
-		driveRobot.backwards(1, 100);
-		driveRobot.forward(1, 10);
-		driveRobot.turnLeft(0.5, 20);
-		driveRobot.turnRight(0.5, 3);
+		driveRobot.backwards(1, 1);
+		driveRobot.stop(1);
+		driveRobot.forward(1, 5);
+		driveRobot.stop(1);
+		driveRobot.turnLeft(0.5, 2);
+		driveRobot.stop(1);
+		driveRobot.turnRight(0.5, 2);
 		driveRobot.stop(1000);
+		//drive angles arent updated
 	}
 }

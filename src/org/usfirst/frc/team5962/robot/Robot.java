@@ -5,11 +5,12 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc.team5962.robot.commands.RunAutonomous;
 import org.usfirst.frc.team5962.robot.commands.RunJoystickTank;
 import org.usfirst.frc.team5962.robot.sensors.RobotGyro;
 import org.usfirst.frc.team5962.robot.subsystems.Drive;
-import org.usfirst.frc.team5962.robot.subsystems.Autonomous;
 
 /* The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -19,18 +20,11 @@ import org.usfirst.frc.team5962.robot.subsystems.Autonomous;
  */
 public class Robot extends IterativeRobot {
 
-	public static boolean mode = true; // true = auto, false = teleop
-
-	public Robot() {
-	}
-
 	public static OI oi;
-
 	public static Drive drive;
 	public static RobotGyro gyro = new RobotGyro();
-	public static Autonomous autonomousSubsystem;
 
-	Command autonomousCommand;
+	public static Command autonomousCommand;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -39,10 +33,9 @@ public class Robot extends IterativeRobot {
 
 	public void robotInit() {
 		RobotMap.init();
-
-		drive = new Drive();
-		oi = new OI();
 		gyro.resetGyro();
+		oi = new OI();
+		drive = new Drive();
 	}
 
 	/**
@@ -69,10 +62,6 @@ public class Robot extends IterativeRobot {
 	 * to the switch structure below with additional strings & commands.
 	 */
 	public void autonomousInit() {
-		mode = true;
-
-		autonomousSubsystem = new Autonomous();
-
 		autonomousCommand = new RunAutonomous();
 
 		if (autonomousCommand != null) {
@@ -84,7 +73,9 @@ public class Robot extends IterativeRobot {
 	 * This function is called periodically during autonomous
 	 */
 	public void autonomousPeriodic() {
+		SmartDashboard.putString("AutoPeriodic", "");
 		Scheduler.getInstance().run();
+		//SmartDashboard.putString("AutoPeriodic end", "");
 	}
 
 	public void teleopInit() {

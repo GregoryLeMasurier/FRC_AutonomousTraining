@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.usfirst.frc.team5962.robot.Robot;
 import org.usfirst.frc.team5962.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class RunAutonomous extends Command {
 
@@ -23,23 +24,28 @@ public class RunAutonomous extends Command {
 
 	protected void execute() {
 		if (index < commands.size()) {
+			SmartDashboard.putString("Size", "" + commands.size());
+			SmartDashboard.putString("Index", "" + index);
 			Item item = commands.get(index);
 			if (item.isComplete()) {
+				RobotMap.myRobot.drive(0, 0);
 				index++;
 			} else {
 				item.execute();
 			}
 		}
-		isFinished = true;
+		else{
+			RobotMap.myRobot.drive(0, 0);
+		}
 	}
 
-	public static void addCommand(Item item) {
+	public void addCommand(Item item) {
 		commands.add(item);
 	}
 
 	@Override
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
-		return isFinished;
+		return false;
 	}
 }
