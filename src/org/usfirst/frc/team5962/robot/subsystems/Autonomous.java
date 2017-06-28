@@ -11,31 +11,24 @@ public class Autonomous extends Subsystem {
 	
 	private RunAutonomous runAuto = (RunAutonomous) Robot.autonomousCommand;
 
-	private double getGyroAngle() {
-		double angle = Robot.gyro.getGyroAngle();
-		return angle;
-	}
-
 	@Override
 	protected void initDefaultCommand() {
 		// TODO Auto-generated method stub
 
 	}
 
-	// TODO: Need to test the turning angles might need to switch which is
-	// negative
 	public void forward(double speed, int time) {
 		Item item = new Item(speed, time, 0);
 		runAuto.addCommand(item);
 	}
 
 	public void turnLeft(double speed, int time) {
-		Item item = new Item(speed, time, 1);
+		Item item = new Item(Math.abs(speed), time, 1);
 		runAuto.addCommand(item);
 	}
 
 	public void turnRight(double speed, int time) {
-		Item item = new Item(speed, time, -1);
+		Item item = new Item(Math.abs(speed), time, -1);
 		runAuto.addCommand(item);
 	}
 

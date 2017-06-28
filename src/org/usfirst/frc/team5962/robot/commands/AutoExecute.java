@@ -16,28 +16,23 @@ public class AutoExecute {
 		 * and time is the time in seconds that you would like to move forwards.
 		 * 
 		 * If you want to turn the robot to the left type:
-		 * driveRobot.turnLeft(speed, time); Speed is any number from -1 to 1
-		 * and time is the time in seconds that you would like to move forwards.
+		 * driveRobot.turnLeft(speed, time); Speed is any number from 0 to 1 
+		 * (absolute value is taken)and time is the time in seconds that you would 
+		 * like to move forwards. If the speed entered is in the range: -1 to 0 we 
+		 * suggest you use turn right.
 		 * 
 		 * If you want to turn the robot to the right type:
-		 * driveRobot.turnRight(speed, time); Speed is any number from -1 to 1
-		 * and time is the time in seconds that you would like to move forwards.
+		 * driveRobot.turnRight(speed, time); Speed is any number from 0 to 1 
+		 * (absolute value is taken) and time is the time in seconds that you would 
+		 * like to move forwards. If the speed entered is in the range: -1 to 0 we 
+		 * suggest you use turn left.
 		 * 
 		 * If you want to stop the robot type: driveRobot.stop(time); Time is
 		 * the time in seconds that you would like to move forwards.
 		 * 
 		 * Enter your code below:
 		 */
-
-		// TODO: Remove the test commands below.
-		driveRobot.backwards(1, 1);
-		driveRobot.stop(1);
-		driveRobot.forward(1, 5);
-		driveRobot.stop(1);
-		driveRobot.turnLeft(0.5, 2);
-		driveRobot.stop(1);
-		driveRobot.turnRight(0.5, 2);
-		driveRobot.stop(1000);
-		//drive angles arent updated
+		
+		
 	}
 }
