@@ -1,7 +1,5 @@
 # FRC_BasicSoftwareTraining
 
-THIS IS NOT TESTED
-
 This version of the software training is an improvement to the 2016 software training because it provides the students with easy to use
 method calls that will allow them to move a robot from a starting square, marked with tape, to an ending square. Simple function calls
 allow for students without software experience to easily pick up and understand very basics of programming with a quick sense of
@@ -33,4 +31,3 @@ These commands are currently entered into the init method in the AutoExecute com
   
   Future changes
   1. Need to add support to select if the robot is running on talons or victors.
-  2. Need to test the right and left turning values. Might need to swap them.
