@@ -4,11 +4,7 @@ import org.usfirst.frc.team5962.robot.Robot;
 import org.usfirst.frc.team5962.robot.RobotMap;
 
 public class Item {
-
-	public enum Direction {
-		forwards, backwards, turnLeft, turnRight, stop
-	};
-
+	
 	private double speed;
 	private int time;
 	private boolean complete = true;
