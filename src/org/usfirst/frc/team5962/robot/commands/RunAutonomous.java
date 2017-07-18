@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class RunAutonomous extends Command {
 
-	private boolean isFinished = false;
 	private AutoExecute execute;
 	private static ArrayList<Item> commands = new ArrayList<Item>();
 	private int index;

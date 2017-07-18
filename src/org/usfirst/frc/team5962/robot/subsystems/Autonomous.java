@@ -1,7 +1,6 @@
 package org.usfirst.frc.team5962.robot.subsystems;
 
 import org.usfirst.frc.team5962.robot.Robot;
-import org.usfirst.frc.team5962.robot.RobotMap;
 import org.usfirst.frc.team5962.robot.commands.Item;
 import org.usfirst.frc.team5962.robot.commands.RunAutonomous;
 
@@ -40,14 +39,5 @@ public class Autonomous extends Subsystem {
 	public void stop(int time) {
 		Item item = new Item(0, time, 0);
 		runAuto.addCommand(item);
-	}
-
-	public void driveBase(double power, int time, double turningValue, long startSystemTime) {
-		long currentTime = System.currentTimeMillis();
-		if (currentTime < (startSystemTime + (time / 1000))) {
-			RobotMap.myRobot.drive(-power, turningValue);
-		} else {
-			RobotMap.myRobot.drive(0, 0);
-		}
 	}
 }
