@@ -1,5 +1,7 @@
 # FRC_BasicSoftwareTraining
 
+**Please send us any feedback so we can improve the project!**
+
 This version of the software training is an improvement to the 2016 software training because it provides the students with easy to use
 method calls that will allow them to move a robot from a starting square, marked with tape, to an ending square. Simple function calls
 allow for students without software experience to easily pick up and understand very basics of programming with a quick sense of
