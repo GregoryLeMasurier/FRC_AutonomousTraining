@@ -31,3 +31,5 @@ These commands are currently entered into the init method in the AutoExecute com
   
   Future changes
   1. Need to add support to select if the robot is running on talons or victors.
+  
+  Currently working on a sensor based version: https://github.com/GregoryLeMasurier/FRC_Sensor_AutonomousTraining
