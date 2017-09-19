@@ -48,7 +48,7 @@ Reason: We invert our drive.
 
 Solution: Remove the inverted lines: RobotMap lines 42 and 43.
 
-4. The right and left sides of the robot move in oppoosite directions when using forward or backwards.
+4. The right and left sides of the robot move in opposite directions when using forward or backwards.
 
 Reason: Setup might be slightly different than ours.
 
