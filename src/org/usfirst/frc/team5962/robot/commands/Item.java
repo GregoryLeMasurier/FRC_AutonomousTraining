@@ -55,6 +55,7 @@ public class Item {
 		} else {
 			RobotMap.myRobot.drive(0, 0);
 			complete = true;
+			Robot.gyro.resetGyro();
 		}
 	}
 }

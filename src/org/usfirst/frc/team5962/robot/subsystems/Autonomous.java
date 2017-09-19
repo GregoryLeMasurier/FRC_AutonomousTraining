@@ -17,27 +17,27 @@ public class Autonomous extends Subsystem {
 	}
 
 	public void forward(double speed, int time) {
-		Item item = new Item(speed, time, 0);
+		Item item = new Item(Math.abs(speed), Math.abs(time), 0);
 		runAuto.addCommand(item);
 	}
 
 	public void turnLeft(double speed, int time) {
-		Item item = new Item(Math.abs(speed), time, 1);
+		Item item = new Item(Math.abs(speed), Math.abs(time), 1);
 		runAuto.addCommand(item);
 	}
 
 	public void turnRight(double speed, int time) {
-		Item item = new Item(Math.abs(speed), time, -1);
+		Item item = new Item(Math.abs(speed), Math.abs(time), -1);
 		runAuto.addCommand(item);
 	}
 
 	public void backwards(double speed, int time) {
-		Item item = new Item(-speed, time, 0);
+		Item item = new Item(-Math.abs(speed), Math.abs(time), 0);
 		runAuto.addCommand(item);
 	}
 
 	public void stop(int time) {
-		Item item = new Item(0, time, 0);
+		Item item = new Item(0, Math.abs(time), 0);
 		runAuto.addCommand(item);
 	}
 }
