@@ -18,17 +18,17 @@ public class AutoExecute {
 		 * If you want to turn the robot to the left type:
 		 * driveRobot.turnLeft(speed, time); Speed is any number from 0 to 1 
 		 * (absolute value is taken)and time is the time in seconds that you would 
-		 * like to move forwards. If the speed entered is in the range: -1 to 0 we 
+		 * like to turn left. If the speed entered is in the range: -1 to 0 we 
 		 * suggest you use turn right.
 		 * 
 		 * If you want to turn the robot to the right type:
 		 * driveRobot.turnRight(speed, time); Speed is any number from 0 to 1 
 		 * (absolute value is taken) and time is the time in seconds that you would 
-		 * like to move forwards. If the speed entered is in the range: -1 to 0 we 
+		 * like to turn right. If the speed entered is in the range: -1 to 0 we 
 		 * suggest you use turn left.
 		 * 
 		 * If you want to stop the robot type: driveRobot.stop(time); Time is
-		 * the time in seconds that you would like to move forwards.
+		 * the time in seconds that you would like to stop the robot.
 		 * 
 		 * Enter your code below:
 		 */
